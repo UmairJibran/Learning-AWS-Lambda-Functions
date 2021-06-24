@@ -1,23 +1,21 @@
 const moment = require("moment");
 
-exports.clock = async event => {
-	console.log("Clock Route was hit, again!");
-	console.log({ event });
+let response;
+
+exports.lambdaHandler = async (event, context) => {
+	const time = moment().format();
 
 	try {
-		const time = moment().format();
-		const response = {
+		response = {
 			statusCode: 200,
-			body: { message: JSON.stringify(`Current Time is: ${time}`) },
+			body: JSON.stringify({
+				message: `Time is: ${time}`,
+			}),
 		};
-
-		return response;
 	} catch (err) {
-		console.error("An Error occurred in clock function", err);
-		const response = {
-			statusCode: 500,
-			body: JSON.stringify(`An Error occurred in clock function`),
-		};
-		return response;
+		console.log(err);
+		return err;
 	}
+
+	return response;
 };
