@@ -1,6 +1,6 @@
 const moment = require("moment");
 
-exports.lambdaHandler = async event => {
+exports.clockLambdaHandler = async event => {
 	console.log("Clock Route was hit!");
 	console.log({ event });
 
