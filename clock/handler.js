@@ -2,7 +2,7 @@ const moment = require("moment");
 
 let response;
 
-exports.lambdaHandler = async (event, context) => {
+exports.clock = async (event, context) => {
 	const time = moment().format();
 
 	try {
