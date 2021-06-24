@@ -1,11 +1,11 @@
 const moment = require("moment");
 
-exports.clockLambdaHandler = async event => {
-	console.log("Clock Route was hit!");
+exports.clock = async event => {
+	console.log("Clock Route was hit, again!");
 	console.log({ event });
 
 	try {
-		const time = moment();
+		const time = moment().format();
 		const response = {
 			statusCode: 200,
 			body: { message: JSON.stringify(`Current Time is: ${time}`) },
