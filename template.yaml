@@ -42,7 +42,7 @@ Resources:
       Handler: handler.timezone
       Runtime: nodejs14.x
       Events:
-        TimeZoneApi:
+        TimeZoneAPI:
           Type: Api
           Properties:
             Path: /timezone
