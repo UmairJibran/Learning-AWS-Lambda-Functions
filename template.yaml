@@ -47,6 +47,18 @@ Resources:
           Properties:
             Path: /timezone
             Method: get
+  ConvertTimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: convert-time/
+      Handler: handler.convertTime
+      Runtime: nodejs14.x
+      Events:
+        ConvertTimeAPI:
+          Type: Api
+          Properties:
+            Path: /convert-time
+            Method: get
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
