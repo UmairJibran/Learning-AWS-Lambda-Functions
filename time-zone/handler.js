@@ -1,6 +1,6 @@
 const moment = require("moment-timezone");
 
-exports.lambdaHandler = async event => {
+exports.timezone = async event => {
 	const timezone =
 		event.queryStringParameters && event.queryStringParameters.tz;
 	const time = moment()

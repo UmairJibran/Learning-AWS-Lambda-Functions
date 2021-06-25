@@ -39,7 +39,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: time-zone/
-      Handler: app.lambdaHandler
+      Handler: handler.timezone
       Runtime: nodejs14.x
       Events:
         TimeZoneApi:
